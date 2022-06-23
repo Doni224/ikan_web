@@ -1,0 +1,38 @@
+{% extends 'includes/include.html' %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="../../static/css/dataset.css">
+    <style>
+        label {
+            font-size: 12px;
+        }
+    </style>
+</head>
+{% include "includes/sidebar.html" %}
+
+<div class="container">
+    <div class="ikan">
+        <h2>Isi Data Karyawan</h2>
+        <form method="post" action="/updateIkan/{{editIkan.nama}}">
+            <hr>
+            <div>
+                <label for="Nama_Ikan">Nama Ikan</label>
+                <input value="{{editIkan.nama}}" maxlength="35" class="form-control" type="text"
+                    name="Nama_Ikan" required><br>
+                <label for="Jenis_Ikan">Jenis_Ikan</label>
+                <input value="{{editIkan.spesies}}" class="form-control" type="text" name="Jenis_Ikan" required><br>
+                <label for="Makanan">Makanan</label>
+                <input value="{{editIkan.makanan}}" class="form-control" type="text" name="Makanan" required><br>
+                <label for="Status">Status</label>
+                <input value="{{editIkan.status}}" class="form-control" type="text" name="Status" required><br>
+                
+                <a href="/popupedit" style="margin-left:21px;"><br>
+                    <button type="submit" class="btn" style="background-color:#FFC700;">Update Data</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
